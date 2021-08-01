@@ -26,7 +26,7 @@ class MessageSenderImplTest {
     }
 
     @Test
-    void testSendRussianTextIfRussianIp() {
+    void sendRussianTextIfRussianIpTest() {
         Map<String, String> headers = new HashMap<String, String>();
         headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, "172.*");
         String actual = messageSender.send(headers);
@@ -35,7 +35,7 @@ class MessageSenderImplTest {
     }
 
     @Test
-    void testSendRussianTextIfNotRussianIp() {
+    void sendRussianTextIfNotRussianIpTest() {
         Map<String, String> headers = new HashMap<String, String>();
         headers.put(MessageSenderImpl.IP_ADDRESS_HEADER, "96.*");
         String actual = messageSender.send(headers);

@@ -9,12 +9,17 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class LocalizationServiceImplTest {
 
     @Test
-    void test_locale() {
+    void localeRussianTest() {
         LocalizationService localizationService = Mockito.spy(LocalizationServiceImpl.class);
 
         String russianActualLocale = localizationService.locale(Country.RUSSIA);
         String russianExpectedLocale = "Добро пожаловать";
         assertEquals(russianActualLocale, russianExpectedLocale);
+    }
+
+    @Test
+    void localeLatinTest() {
+        LocalizationService localizationService = Mockito.spy(LocalizationServiceImpl.class);
 
         String notRussianActualLocale = localizationService.locale(Country.BRAZIL);
         String notRussianExpectedLocale = "Welcome";
